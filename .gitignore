@@ -121,6 +121,15 @@ ENV/
 env.bak/
 venv.bak/
 
+
+#Python Ignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
 # Spyder project settings
 .spyderproject
 .spyproject
