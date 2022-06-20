@@ -10,9 +10,10 @@ from nltk import ngrams
 class Tokenizer:
 
     def tokenize(text):
-        pattern = re.compile(r"([-\s.,;!?])+")
-        tokens = pattern.split(text)
-        tokens = [x for x in tokens if x and x not in '-\t\n.,;!?']
+        # pattern = re.compile(r"([-\s.,;!?])+")
+        # tokens = pattern.split(text)
+        # tokens = [x for x in tokens if x and x not in '-\t\n.,;!?']
+        tokens = word_tokenize(text)
         return tokens
 
     @staticmethod
@@ -29,11 +30,15 @@ class Tokenizer:
         stop_words = nltk.corpus.stopwords.words('english')
         # TODO:: extend stopwords list
 
-        token_stop_words = [sw for sw in tokens if sw and sw in stop_words]
+        token_stop_words = [sw for sw in tokens
+                            if sw and sw in stop_words]
         return token_stop_words
 
     def normalized_tokens(tokens):
-        normalized_tokens = [token.lower() for token in tokens]
+        # remove punctuations etc
+        normalized_tokens = [token for token in tokens if token.isalpha()]
+        # lowercase tokens
+        normalized_tokens = [token.lower() for token in normalized_tokens]
         return normalized_tokens
 
 

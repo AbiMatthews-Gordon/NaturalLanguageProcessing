@@ -56,7 +56,6 @@ def upload_file():
         return resp
 
 
-
 # ************** UTILITIES ***************
 # ****************************************
 
@@ -115,7 +114,7 @@ def handle_file(filename):
 def convert_text(text):
     result = None
     parse_tree = None
-    alpanu = re.compile('\w+').findall(text) # regex to check if file has letters and/or numbers
+    alpanu = re.compile('\w+').findall(text)  # regex to check if file has letters and/or numbers
 
     # check if string is valid - must have length >0, numbers &/or letters
     if len(text) > 0 and alpanu:
@@ -125,6 +124,7 @@ def convert_text(text):
         foldername = str(uuid.uuid4())
         os.mkdir("static\\" + foldername)
         # call parser on results
+
         parse_tree = Parser.generate_parser_tree(tokens, foldername)
 
         # generate audio

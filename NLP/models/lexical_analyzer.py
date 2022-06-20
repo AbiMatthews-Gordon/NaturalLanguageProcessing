@@ -4,6 +4,7 @@ from models.tokenizer import Tokenizer
 from models.lemmatizer import Lemmatizer
 from models.pos_tagger import PosTagger
 from models.stemmatizer import Stemmatizer
+from models.parser import Parser
 
 
 class LexicalAnalyser:
@@ -35,8 +36,14 @@ class LexicalAnalyser:
             pos_sentence = (PosTagger.tag_pos(Tokenizer.tokenize(sentence)))
             pos_sentences.append(pos_sentence)
 
+        name_entities = Parser.print_named_entities(pos_sentences)
         return pos_sentences
-
-
-
-
+        # return {"sentences": tokens,
+        #         "tokens": two_gram_tokens,
+        #         "two_gram_tokens": stop_words,
+        #         "stop_words": normalized_tokens,
+        #         "normalized_tokens": lemmatized_tokens,
+        #         "lemmatized_tokens": tokens_pos,
+        #         "tokens_pos": stemmed_tokens,
+        #         "pos_sentences": pos_sentences
+        #         }

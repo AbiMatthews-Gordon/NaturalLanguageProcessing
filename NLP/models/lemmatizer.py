@@ -12,4 +12,4 @@ class Lemmatizer:
 
         for token in tokens:
             lemmatized_tokens.append(lemmatizer.lemmatize(token))
-            return lemmatized_tokens
+        return lemmatized_tokens
