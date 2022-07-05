@@ -2,7 +2,7 @@ const apiPath = 'http://127.0.0.1:5000/';
 
 fileUpload = document.getElementById("text_file");
 fileUpload.addEventListener("change", function(e){
-    uploadFile(e.target.files[0])
+    console.log(uploadFile(e.target.files[0]))
 })
 
 async function uploadFile(file) {
@@ -17,9 +17,10 @@ async function uploadFile(file) {
     .then(response => {
       return response.json();
     }).then(data => {
-      fileLoader.style.display = "none";
-      var audioDownloadEnpoint = apiPath + "audio/" + data.audio;
-      parseTreeDownloadPath = apiPath + "tree/" + data.tree;
+        console.log(data)
+    //   fileLoader.style.display = "none";
+      var audioDownloadEnpoint = apiPath + "static/" + data.audio_file;
+    //   parseTreeDownloadPath = apiPath + "static/" + data.tree;
       setAndPlayAudio(audioDownloadEnpoint);
       showParseTreeButton(true);
     });
