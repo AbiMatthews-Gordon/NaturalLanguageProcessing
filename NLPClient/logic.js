@@ -1,8 +1,8 @@
 const {net} = require('electron');
-
+document.write("clicked")
 var text_submit = document.getElementById("server_request");
 text_submit.addEventListener('click', () => {
-    console.log("clicked")
+    document.write("clicked")
     const request = net.request({
         method: 'GET',
         protocol: 'http:',

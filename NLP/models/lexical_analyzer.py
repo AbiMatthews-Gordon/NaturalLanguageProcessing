@@ -48,19 +48,19 @@ class LexicalAnalyser:
             pos_sentence = (PosTagger.tag_pos(Tokenizer.tokenize(sentence)))
             pos_sentences.append(pos_sentence)
         print("-----------------------")
-        print(pos_sentences)
+        # print(pos_sentences)
         pos_sentences_optimised = Optimizer.split_independent_clauses(pos_sentences)
         print("-----------------------")
         print(pos_sentences_optimised)
 
         name_entities = Parser.print_named_entities(pos_sentences)
-        return pos_sentences
-        # return {"sentences": tokens,
-        #         "tokens": two_gram_tokens,
-        #         "two_gram_tokens": stop_words,
-        #         "stop_words": normalized_tokens,
-        #         "normalized_tokens": lemmatized_tokens,
-        #         "lemmatized_tokens": tokens_pos,
-        #         "tokens_pos": stemmed_tokens,
-        #         "pos_sentences": pos_sentences
-        #         }
+        # return pos_sentences
+        return {"sentences": tokens,
+                "tokens": two_gram_tokens,
+                "two_gram_tokens": stop_words,
+                "stop_words": normalized_tokens,
+                "normalized_tokens": lemmatized_tokens,
+                "lemmatized_tokens": tokens_pos,
+                "tokens_pos": stemmed_tokens,
+                "pos_sentences": pos_sentences
+                }

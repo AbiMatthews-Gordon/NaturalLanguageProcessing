@@ -17,11 +17,14 @@ class Parser:
     def generate_parser_tree(pos_tokens_sentences, tree_folder_name):
 
         grammar = RegexpParser("""
+                               PS: {<PRP> <VBP> <DT>? <IN>? <PR.*> <NN.*>}
+                               VP: {<RB>? <CC>? <V.*> <P.*> <IN> <DT> <NN.*>}           #To extract Verb Phrases
+                               SV1: {<NN.*> <CC> <NN.*>}
+                               SV2: {<NN.*> <CC>}
                                NP: {<DT>?<JJ.*>*<NN.*>+}
                                P: {<IN>}
-                               V: {<V.*>}
-                               PP: {<P> <NP>}
-                               VP: {<V> <NP|PP>*}
+                               PP: {<IN> <NP>} #To extract Prepositional Phrases
+                               # VP: {<V> <NP|PP>*}
                                FW: {<FW>}
                                CD: {<CD>}
                                PRP: {<PRP.*>}

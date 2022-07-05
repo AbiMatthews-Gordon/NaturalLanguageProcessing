@@ -24,7 +24,6 @@ class Optimizer:
         for word in text:
             if word not in correct_words:
                 # and word not in correct_words:
-                print(word)
                 temp = [(jaccard_distance(set(ngrams(word, 2)),
                                           set(ngrams(w, 2))
                                           ), w)
@@ -115,8 +114,6 @@ class Optimizer:
     def split_independent_clauses(pos_sentences):
         # eg. I went to the store I got milk and cookies  ->
         # I went to the store. I got milk and cookies.
-        clauses_updated = False
-        independent_clauses = []
         pos_sentences_updated = []
         changed = False
 
@@ -124,8 +121,9 @@ class Optimizer:
                                    IC: {<PRP> <V.*> <IN>? <PRP.*>? <NN.*>? <NN.*>? <TO>? <DT>? <NN.*>? <CC>? <NN.*>? <V.*>? <NN.*>}
                                    """)
         for pos_sentence in pos_sentences:
+            clauses_updated = False
+            independent_clauses = []
             chunk = nltk.tree.Tree.fromstring(str(grammar.parse(pos_sentence)))
-            # print(pos_sentence)
             for subtree in chunk.subtrees():
                 if subtree.label() == 'IC':
                     if (len(subtree.leaves()) > 4):
@@ -133,17 +131,61 @@ class Optimizer:
                         sentence = Optimizer.reconstruct_sentence(pos_tokens)
                         sentence = sentence.capitalize()
                         independent_clauses.append(sentence+".")
+                        print(sentence)
                         clauses_updated = True
             if (clauses_updated):
-                print('\033[94m============INDEPENDENT CLAUSES============\033[0m \n ')
                 pos_sentences_updated = pos_sentences_updated + independent_clauses
-                # print(independent_clauses)
                 changed = True
             else:
-                pos_sentences_updated.append(pos_sentence)
-                # print("No change detected")
+                pos_sentences_updated.append(Optimizer.reconstruct_sentence(pos_sentence))
 
         return changed, pos_sentences_updated
+
+    @staticmethod
+    def check_subject_verb_agreement(chunk):
+        # eg. Anna and Mike is going skiing. -> Anna and Mike are going skiing.
+        pos_tokens = Optimizer.convert_leaves_to_tokens(chunk.leaves())
+        old_sentence = Optimizer.reconstruct_sentence(pos_tokens)
+        sentence_updated = False
+        sentence = ''
+        changed = False
+
+        for index, leaf in enumerate(chunk.subtrees()):
+            if leaf.label() == 'SV1':
+                for idx, token in enumerate(pos_tokens):
+                    if token[1] == 'VBZ':
+                        sentence_updated = True
+                        old_token = token
+                        new_token = []
+                        new_token.append('are')
+                        new_token.append('VBD')
+                        pos_tokens[idx] = new_token
+                        print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
+            if leaf.label() == 'SV2':
+                for idx, token in enumerate(pos_tokens):
+                    sentence_updated = True
+                    if token[1] == 'VBD' or token[0] == 'are':
+                        old_token = token
+                        new_token = []
+                        new_token.append('is')
+                        new_token.append('VBZ')
+                        pos_tokens[idx] = new_token
+                        print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
+
+        if (sentence_updated):
+            updated_sentence = Optimizer.reconstruct_sentence(pos_tokens)
+            # print('\033[94m============OLD SENTENCE============\033[0m \n ')
+            print(old_sentence)
+            # print('\033[94m============UPDATED SENTENCE============\033[0m \n ')
+            # print(updated_sentence)
+            sentence = updated_sentence
+            changed = True
+        else:
+            # print("No change detected")
+            sentence = old_sentence
+            changed = False
+
+        return changed, sentence
 
 
     @staticmethod

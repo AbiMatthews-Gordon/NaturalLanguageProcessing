@@ -134,11 +134,11 @@ def convert_text(text):
         os.mkdir("static\\" + foldername)
         # call parser on results
 
-        parse_tree = Parser.generate_parser_tree(tokens, foldername)
+        parse_tree = Parser.generate_parser_tree(tokens.get("pos_sentences"), foldername)
 
         # generate audio
         generate_audio(text, foldername)
-        parse_tree.update({"tokens": tokens, "id": foldername, "audio_file": ("/static/" + foldername + "/audio.mp3")})
+        parse_tree.update({"tokens": tokens.get("pos_sentences"), "id": foldername, "audio_file": ("/static/" + foldername + "/audio.mp3")})
         return parse_tree
 
 
