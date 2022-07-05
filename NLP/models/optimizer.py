@@ -9,6 +9,8 @@ from nltk.tokenize.treebank import TreebankWordDetokenizer
 from nltk.stem.porter import PorterStemmer
 
 from NLP.models.dictionary import Dictionary
+from NLP.models.parser import Parser
+from NLP.models.tokenizer import Tokenizer
 
 class Optimizer:
     @staticmethod
@@ -29,7 +31,7 @@ class Optimizer:
                                           ), w)
                          for w in correct_words if w[0]==word[0]]
                 corrected_words = sorted(temp, key = lambda val:val[0])[0][1]
-                print(corrected_words)
+                # print(corrected_words)
         return corrected_words
 
     #     #eg. The vehicle is around the corna-> The vehicle is around the corner.
@@ -55,12 +57,8 @@ class Optimizer:
                           ) or
                           ((index + 1) == num_of_tokens) # catches last token
                           ]
-
-        # print(sanitizedWords)
-        # TODO: Reconstruct sentence
-        # sentence = TreebankWordDetokenizer().detokenize(noduplist)
-        # tree = Optimizer.regenerate_parse_tree(sentence)
         return sanitizedWords  # returns the new list
+
 
     def remove_duplicate_sentences(sentences): # eg. "The boy ran. The boy ran." should result in "The boy ran."
         num_of_sentences = len(sentences)
@@ -77,20 +75,22 @@ class Optimizer:
 
         return sanitizedSentences
 
+    @staticmethod
     def capitalize_proper_nouns(text):
         true_cased_text = truecase.get_truecaser().get_true_case(text)
 
         return true_cased_text
 
+    @staticmethod
     def remove_grammar_redundancies(tokens):
         stemmer = PorterStemmer()
         num_of_tokens = len(tokens)
         sanitized_tokens = []
-        print(tokens)
+        # print(tokens)
         for index, token in enumerate(tokens):
             synonyms = [lemma for syn in wordnet.synsets(token) for lemma in syn.lemma_names()]  # we use nltk's wordnet synonym library
             stemmatised_neighbour = ' '.join( [stemmer.stem(w).strip("'") for w in tokens[index - 1].split()] )
-            print(stemmatised_neighbour + " " + token)
+            # print(stemmatised_neighbour + " " + token)
             if (index < num_of_tokens and tokens[index - 1] and stemmatised_neighbour in synonyms):
                 # do not keep word if previous word is a synonym
                 continue
@@ -131,7 +131,7 @@ class Optimizer:
                         sentence = Optimizer.reconstruct_sentence(pos_tokens)
                         sentence = sentence.capitalize()
                         independent_clauses.append(sentence+".")
-                        print(sentence)
+                        # print(sentence)
                         clauses_updated = True
             if (clauses_updated):
                 pos_sentences_updated = pos_sentences_updated + independent_clauses
@@ -139,53 +139,51 @@ class Optimizer:
             else:
                 pos_sentences_updated.append(Optimizer.reconstruct_sentence(pos_sentence))
 
-        return changed, pos_sentences_updated
+        return pos_sentences_updated
 
     @staticmethod
-    def check_subject_verb_agreement(chunk):
-        # eg. Anna and Mike is going skiing. -> Anna and Mike are going skiing.
-        pos_tokens = Optimizer.convert_leaves_to_tokens(chunk.leaves())
-        old_sentence = Optimizer.reconstruct_sentence(pos_tokens)
-        sentence_updated = False
-        sentence = ''
-        changed = False
+    def check_subject_verb_agreement(sentences):
+        chunks = Parser.generate_parser_tree(sentences).get("parse_tree")
 
-        for index, leaf in enumerate(chunk.subtrees()):
-            if leaf.label() == 'SV1':
-                for idx, token in enumerate(pos_tokens):
-                    if token[1] == 'VBZ':
-                        sentence_updated = True
-                        old_token = token
-                        new_token = []
-                        new_token.append('are')
-                        new_token.append('VBD')
-                        pos_tokens[idx] = new_token
-                        print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
-            if leaf.label() == 'SV2':
-                for idx, token in enumerate(pos_tokens):
-                    sentence_updated = True
-                    if token[1] == 'VBD' or token[0] == 'are':
-                        old_token = token
-                        new_token = []
-                        new_token.append('is')
-                        new_token.append('VBZ')
-                        pos_tokens[idx] = new_token
-                        print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
-
-        if (sentence_updated):
-            updated_sentence = Optimizer.reconstruct_sentence(pos_tokens)
-            # print('\033[94m============OLD SENTENCE============\033[0m \n ')
-            print(old_sentence)
-            # print('\033[94m============UPDATED SENTENCE============\033[0m \n ')
-            # print(updated_sentence)
-            sentence = updated_sentence
-            changed = True
-        else:
-            # print("No change detected")
-            sentence = old_sentence
+        for index, chunk in enumerate(chunks):
+            # eg. Anna and Mike is going skiing. -> Anna and Mike are going skiing.
+            pos_tokens = Tokenizer.tokenize(Optimizer.reconstruct_sentence(chunk))
+            old_sentence = sentences[index]
+            sentence_updated = False
+            sentence = ''
             changed = False
 
-        return changed, sentence
+            for index, leaf in enumerate(chunk.subtrees()):
+                if leaf.label() == 'SV1':
+                    for idx, token in enumerate(pos_tokens):
+                        if token[1] == 'VBZ':
+                            sentence_updated = True
+                            old_token = token
+                            new_token = []
+                            new_token.append('are')
+                            new_token.append('VBD')
+                            pos_tokens[idx] = new_token
+                            # print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
+                if leaf.label() == 'SV2':
+                    for idx, token in enumerate(pos_tokens):
+                        sentence_updated = True
+                        if token[1] == 'VBD' or token[0] == 'are':
+                            old_token = token
+                            new_token = []
+                            new_token.append('is')
+                            new_token.append('VBZ')
+                            pos_tokens[idx] = new_token
+                            # print("\033[91m", old_token, '\033[0m', ' ----------> ', '\033[92m', new_token, '\033[0m')
+
+            if (sentence_updated):
+                updated_sentence = Optimizer.reconstruct_sentence(pos_tokens)
+                sentences[index] = updated_sentence
+                changed = True
+            else:
+                sentences[index] = old_sentence
+                changed = False
+
+        return changed, sentences
 
 
     @staticmethod

@@ -50,3 +50,4 @@ class Dictionary:
         'suh': 'so',
         'dawg': 'dog'
     })
+    allowed_repeat_words = ["tut"]

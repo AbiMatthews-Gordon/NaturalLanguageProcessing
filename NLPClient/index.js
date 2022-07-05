@@ -10,7 +10,7 @@ async function uploadFile(file) {
     formData.append('file', file);
     // fileLoader.style.display = "flex";
   
-    fetch(apiPath + 'upload', {
+    fetch(apiPath + 'upload_file', {
       body: formData,
       method: "post"
     }).then(handleErrors)

@@ -57,12 +57,12 @@ def upload_file():
     file.save(wz_utils.secure_filename(file.filename))
 
     # handle any exception that may occur while the file is being processed
-    # try:
-    result = handle_file(wz_utils.secure_filename(file.filename))
-    return jsonify(result)
-    # except Exception as ex:
-    #     resp = make_response("An error occurred while processing file", 400) # client gets this msg
-    #     return resp
+    try:
+        result = handle_file(wz_utils.secure_filename(file.filename))
+        return jsonify(result)
+    except Exception as ex:
+        resp = make_response("An error occurred while processing file", 400) # client gets this msg
+        return resp
 
 
 # ************** UTILITIES ***************
@@ -137,7 +137,7 @@ def convert_text(text):
         parse_tree = Parser.generate_parser_tree(tokens.get("pos_sentences"), foldername)
 
         # generate audio
-        generate_audio(text, foldername)
+        generate_audio(tokens.get("process_text"), foldername)
         parse_tree.update({"tokens": tokens.get("pos_sentences"), "id": foldername, "audio_file": ("/static/" + foldername + "/audio.mp3")})
         return parse_tree
 

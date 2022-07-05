@@ -13,18 +13,17 @@ from reportlab.graphics import renderPDF
 
 
 class Parser:
-
-    def generate_parser_tree(pos_tokens_sentences, tree_folder_name):
-
+    @staticmethod
+    def generate_parser_tree(pos_tokens_sentences, tree_folder_name=None):
+        # VP: { < V > < NP | PP > *}
         grammar = RegexpParser("""
                                PS: {<PRP> <VBP> <DT>? <IN>? <PR.*> <NN.*>}
                                VP: {<RB>? <CC>? <V.*> <P.*> <IN> <DT> <NN.*>}           #To extract Verb Phrases
                                SV1: {<NN.*> <CC> <NN.*>}
-                               SV2: {<NN.*> <CC>}
+                               SV2: {.*<NN.*> <V.*>}
                                NP: {<DT>?<JJ.*>*<NN.*>+}
                                P: {<IN>}
                                PP: {<IN> <NP>} #To extract Prepositional Phrases
-                               # VP: {<V> <NP|PP>*}
                                FW: {<FW>}
                                CD: {<CD>}
                                PRP: {<PRP.*>}
@@ -34,10 +33,10 @@ class Parser:
         for index, sentence in enumerate(pos_tokens_sentences):
             output = grammar.parse(sentence)
             extractions.append(output)
-            print("\033[94m Extraction result for sentence \033[0m \n", output)
-
-            Parser.draw_tree(output, "static\\" + tree_folder_name + "\\_" + str(index))
-            parse_tree_image_links.append("static/" + tree_folder_name + "/_" + str(index)+".svg")
+            # print("\033[94m Extraction result for sentence \033[0m \n", output)
+            if tree_folder_name and tree_folder_name is not None:
+                Parser.draw_tree(output, "static\\" + tree_folder_name + "\\_" + str(index))
+                parse_tree_image_links.append("static/" + tree_folder_name + "/_" + str(index)+".svg")
 
         return {"parse_tree": extractions, "parser_tree_image_links": parse_tree_image_links}
             # canvasFrame = CanvasFrame()

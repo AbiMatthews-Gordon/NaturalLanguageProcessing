@@ -1,25 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-    <style>
 
-    </style>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lizzy Text to Speech</title>
+
+  <style type="text/css">
+
+
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #2B59C3;
+      flex-direction: column;
+    } */
+    body{
+      background: #35bbf4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .home {
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; */
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* 
+    header {
+      font-size: 30px;
+      font-weight: 500;
+      color: #fff;
+      text-align: center;
+    }
+
+    span {
+      font-size: 25px;
+      font-weight: 500;
+      color: #fff;
+      margin: 10px 0 15px 0;
+    } */
+  </style>
+
+</head>
+
+<body>
+  <h1>Lizzy Text to Speech</h1>
+
+  <div class="row">
+
+    <div class="home">
+      <img src="Assets/images/hiRobot.png" width="300" height="400">
+    </div>
+
+    <div class="home">
+      <h3>
+        <span> Choose one of the following options: </span>
+      </h3>
+
+
+      <input name="file" type="file" name="" id="text_file">
+
+      <br><br>
+
+      <textarea name="text" id="text_box" cols="30" rows="10"></textarea>
+      <br><br>
+
+      <input name="url" type="url" name="" id="text_url">
+      <button id="server_request">Test</button>
+    </div>
+
+  </div>
+
+  <br>
+  <div class="audio-area">
+
+    <audio id="audio-controls" controls style="display:none">
+      <source id="mp3-src" type="audio/mp3">
+    </audio>
+
+  </div>
+
+
+  <!-- We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-    <input name="file" type="file" name="" id="text_file">
-    <textarea name="text" id="text_box" cols="30" rows="10"></textarea>
-    <input name="url" type="url" name="" id="text_url">
-    <button id="server_request">Test</button>
-    <script src="./renderer.js"></script>
-    <script src="./index.js"></script>
-    <!--<script src="./logic.js"></script>-->
-  </body>
+    and Electron <span id="electron-version"></span>. -->
+
+  <script src="./renderer.js"></script>
+  <script src="./index.js"></script>
+  <!--<script src="./logic.js"></script>-->
+</body>
+
 </html>
