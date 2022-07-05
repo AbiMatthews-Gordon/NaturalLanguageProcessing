@@ -10,15 +10,13 @@ from nltk import ngrams
 class Tokenizer:
 
     def tokenize(text):
-        # pattern = re.compile(r"([-\s.,;!?])+")
-        # tokens = pattern.split(text)
-        # tokens = [x for x in tokens if x and x not in '-\t\n.,;!?']
         tokens = word_tokenize(text)
         return tokens
 
     @staticmethod
     def sentence_tokenizer(text):
-        return sent_tokenize(text)
+        sentences = sent_tokenize(text, language='english')
+        return sentences
 
     @staticmethod
     def n_gram_tokenize(n, tokens):
@@ -26,7 +24,7 @@ class Tokenizer:
         return n_gram_tokens
 
     def remove_stop_words(tokens):
-        nltk.download('stopwords')
+        # nltk.download('stopwords')
         stop_words = nltk.corpus.stopwords.words('english')
         # TODO:: extend stopwords list
 

@@ -6,7 +6,7 @@ class Lemmatizer:
 
     def lemmatize(tokens):
 
-        nltk.download('wordnet')
+        # nltk.download('wordnet')
         lemmatizer = WordNetLemmatizer()
         lemmatized_tokens = []
 

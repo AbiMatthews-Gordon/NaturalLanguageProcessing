@@ -47,8 +47,8 @@ class Parser:
     def print_named_entities(pos_sentences):
 
         named_entities =[]
-        nltk.download('maxent_ne_chunker')
-        nltk.download('words')
+        # nltk.download('maxent_ne_chunker')
+        # nltk.download('words')
         for sentence in pos_sentences:
             ne_tree = nltk.ne_chunk(sentence)
             print("\n\033[94m*******Named Entity Tree*******\033[0m \n", ne_tree)

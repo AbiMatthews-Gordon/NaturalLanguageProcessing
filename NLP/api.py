@@ -1,3 +1,4 @@
+import nltk
 import PyPDF2
 from flask import Flask, jsonify, request, make_response
 from werkzeug import utils as wz_utils
@@ -16,6 +17,14 @@ from models.parser import Parser
 
 app = Flask(__name__)
 
+# download nltk requirements
+def nltk_downloads():
+    nltk.download('wordnet')
+    nltk.download('stopwords')
+    nltk.download('maxent_ne_chunker')
+    nltk.download('words')
+
+
 # *********** API ENDPOINTS **************
 # ******************************************
 # post request for the convert_text method
@@ -23,7 +32,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def index():
-    return jsonify({"Message": "Welcome to the Lizzy Speech Engine"})
+    return jsonify({"Message": "Welcome to my Speech Engine"})
 
 
 # post request for the enter_text method
@@ -48,12 +57,12 @@ def upload_file():
     file.save(wz_utils.secure_filename(file.filename))
 
     # handle any exception that may occur while the file is being processed
-    try:
-        result = handle_file(wz_utils.secure_filename(file.filename))
-        return jsonify(result)
-    except Exception as ex:
-        resp = make_response("An error occurred while processing file", 400) # client gets this msg
-        return resp
+    # try:
+    result = handle_file(wz_utils.secure_filename(file.filename))
+    return jsonify(result)
+    # except Exception as ex:
+    #     resp = make_response("An error occurred while processing file", 400) # client gets this msg
+    #     return resp
 
 
 # ************** UTILITIES ***************
@@ -147,5 +156,5 @@ def generate_audio(text, foldername):
 
 # output = convert_text("The cow jumped over the moon.")
 # print(output)
-
+nltk_downloads()
 app.run(debug=True)

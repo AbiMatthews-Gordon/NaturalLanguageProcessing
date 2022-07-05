@@ -1,10 +1,12 @@
 import nltk
 from nltk import tokenize
-from models.tokenizer import Tokenizer
-from models.lemmatizer import Lemmatizer
-from models.pos_tagger import PosTagger
-from models.stemmatizer import Stemmatizer
-from models.parser import Parser
+from NLP.models.tokenizer import Tokenizer
+from NLP.models.lemmatizer import Lemmatizer
+from NLP.models.pos_tagger import PosTagger
+from NLP.models.stemmatizer import Stemmatizer
+from NLP.models.parser import Parser
+from NLP.models.optimizer import Optimizer
+from nltk.tokenize.treebank import TreebankWordDetokenizer
 
 
 class LexicalAnalyser:
@@ -13,7 +15,15 @@ class LexicalAnalyser:
     def perform_lexical_analysis(text):
 
         sentences = Tokenizer.sentence_tokenizer(text)
-        tokens = Tokenizer.tokenize(text)
+        # optimised_sentences = Optimizer.remove_duplicate_sentences(sentences)
+        sentences = Optimizer.remove_duplicate_sentences(sentences)
+        # tokens = Tokenizer.tokenize(text)
+        tokens = Tokenizer.tokenize(Optimizer.capitalize_proper_nouns(' '.join(sentences)))
+        tokens = Optimizer.change_informal_words(tokens)
+        tokens = Optimizer.remove_duplicate_words(tokens)
+        tokens = Optimizer.remove_grammar_redundancies(tokens)
+        tokens = Optimizer.remove_redundant_apostrophes(tokens)
+        sentences = Tokenizer.sentence_tokenizer(TreebankWordDetokenizer().detokenize(tokens))
         two_gram_tokens = Tokenizer.n_gram_tokenize(2, tokens)
         stop_words = Tokenizer.remove_stop_words(tokens)
         normalized_tokens = Tokenizer.normalized_tokens(tokens)
@@ -23,7 +33,9 @@ class LexicalAnalyser:
 
         print('\033[94m*******SENTENCES*******\033[0m \n', sentences)
         print('\033[94m*******TOKENS*******\033[0m \n', tokens)
-        print('\033[94m*******TWO GRAM TOKENS*******\033[0m \n', two_gram_tokens)
+        # print('\033[94m*******OPTIMISED TOKENS*******\033[0m \n', optimised_tokens)
+        # print('\033[94m*******OPTIMISED SENTENCES*******\033[0m \n', optimised_sentences)
+        # print('\033[94m*******TWO GRAM TOKENS*******\033[0m \n', two_gram_tokens)
         print('\033[94m*******STOP WORDS*******\033[0m \n', stop_words)
         print('\033[94m*******NORMALIZED TOKENS*******\033[0m \n', normalized_tokens)
         print('\033[94m*******LEMMATIZED TOKENS*******\033[0m \n', lemmatized_tokens)
@@ -35,6 +47,11 @@ class LexicalAnalyser:
         for sentence in sentences:
             pos_sentence = (PosTagger.tag_pos(Tokenizer.tokenize(sentence)))
             pos_sentences.append(pos_sentence)
+        print("-----------------------")
+        print(pos_sentences)
+        pos_sentences_optimised = Optimizer.split_independent_clauses(pos_sentences)
+        print("-----------------------")
+        print(pos_sentences_optimised)
 
         name_entities = Parser.print_named_entities(pos_sentences)
         return pos_sentences
