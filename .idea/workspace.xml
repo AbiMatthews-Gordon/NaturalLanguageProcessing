@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="085a290b-90fc-40fd-8628-06ac4b3584b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/NLPTester.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLPTester.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/models/dictionary.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/models/dictionary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/models/lexical_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/models/lexical_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/models/optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/models/optimizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/models/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/models/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/0071a8fa-01ab-4498-b473-d20936b6c074/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/0071a8fa-01ab-4498-b473-d20936b6c074/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/0071a8fa-01ab-4498-b473-d20936b6c074/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/0071a8fa-01ab-4498-b473-d20936b6c074/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/02fefc39-998e-4728-94c6-6754e4740d84/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/02fefc39-998e-4728-94c6-6754e4740d84/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/02fefc39-998e-4728-94c6-6754e4740d84/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/02fefc39-998e-4728-94c6-6754e4740d84/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/12bce64c-83b8-4acc-a68f-7aa1f1b3be52/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/12bce64c-83b8-4acc-a68f-7aa1f1b3be52/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/12bce64c-83b8-4acc-a68f-7aa1f1b3be52/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/12bce64c-83b8-4acc-a68f-7aa1f1b3be52/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1ac9b35d-1cc4-4048-af99-6baeb1a3bb98/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1ac9b35d-1cc4-4048-af99-6baeb1a3bb98/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1ac9b35d-1cc4-4048-af99-6baeb1a3bb98/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1ac9b35d-1cc4-4048-af99-6baeb1a3bb98/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1d67da00-4c06-4474-a3d5-8ff27d2b902d/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1d67da00-4c06-4474-a3d5-8ff27d2b902d/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1d67da00-4c06-4474-a3d5-8ff27d2b902d/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1d67da00-4c06-4474-a3d5-8ff27d2b902d/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1eef45c4-5de9-49ed-ae1b-72712c13110c/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1eef45c4-5de9-49ed-ae1b-72712c13110c/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1eef45c4-5de9-49ed-ae1b-72712c13110c/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/1eef45c4-5de9-49ed-ae1b-72712c13110c/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/578d979b-a55d-43d7-9fc0-41a4bacd8e5a/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/578d979b-a55d-43d7-9fc0-41a4bacd8e5a/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/578d979b-a55d-43d7-9fc0-41a4bacd8e5a/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/578d979b-a55d-43d7-9fc0-41a4bacd8e5a/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/7f7b5061-bd65-4110-92f0-4e03a0e82b57/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/7f7b5061-bd65-4110-92f0-4e03a0e82b57/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/7f7b5061-bd65-4110-92f0-4e03a0e82b57/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/7f7b5061-bd65-4110-92f0-4e03a0e82b57/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/a2dd16be-1faa-4ab9-987f-66d9ce779eb6/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/a2dd16be-1faa-4ab9-987f-66d9ce779eb6/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/a2dd16be-1faa-4ab9-987f-66d9ce779eb6/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/a2dd16be-1faa-4ab9-987f-66d9ce779eb6/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/b3b73920-50c6-4525-a4fc-4023391b4679/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/b3b73920-50c6-4525-a4fc-4023391b4679/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/b3b73920-50c6-4525-a4fc-4023391b4679/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/b3b73920-50c6-4525-a4fc-4023391b4679/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/ca73f230-d54b-4ecc-bae5-618ba3705b0b/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/ca73f230-d54b-4ecc-bae5-618ba3705b0b/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/ca73f230-d54b-4ecc-bae5-618ba3705b0b/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/ca73f230-d54b-4ecc-bae5-618ba3705b0b/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/dc4cb231-4904-47a3-8129-e742ce7b86d2/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/dc4cb231-4904-47a3-8129-e742ce7b86d2/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/dc4cb231-4904-47a3-8129-e742ce7b86d2/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/dc4cb231-4904-47a3-8129-e742ce7b86d2/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e44c1864-f533-45b9-8dfa-17a324c80ed0/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e44c1864-f533-45b9-8dfa-17a324c80ed0/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e44c1864-f533-45b9-8dfa-17a324c80ed0/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e44c1864-f533-45b9-8dfa-17a324c80ed0/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/efd6dc31-6e07-40c5-8324-1deaa967f2e6/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/efd6dc31-6e07-40c5-8324-1deaa967f2e6/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/efd6dc31-6e07-40c5-8324-1deaa967f2e6/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/efd6dc31-6e07-40c5-8324-1deaa967f2e6/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClient/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClient/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClient/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClient/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AGigf3LjLdTN62quhfPt4TOgr7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hummi/Documents/GitHub Projects/NaturalLanguageProcessing&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NaturalLanguageProcessing" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NLP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NLP/api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.api" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="085a290b-90fc-40fd-8628-06ac4b3584b2" name="Changes" comment="" />
+      <created>1654642434454</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654642434454</updated>
+    </task>
+    <servers />
+  </component>
+</project>
