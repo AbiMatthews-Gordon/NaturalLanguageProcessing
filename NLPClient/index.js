@@ -1,6 +1,7 @@
 const apiPath = 'http://127.0.0.1:5000/';
 
 fileUpload = document.getElementById("text_file");
+audio = document.getElementById("audio-controls");
 fileUpload.addEventListener("change", function(e){
     console.log(uploadFile(e.target.files[0]))
 })
@@ -19,7 +20,7 @@ async function uploadFile(file) {
     }).then(data => {
         console.log(data)
     //   fileLoader.style.display = "none";
-      var audioDownloadEnpoint = apiPath + "static/" + data.audio_file;
+      var audioDownloadEnpoint = apiPath + data.audio_file;
     //   parseTreeDownloadPath = apiPath + "static/" + data.tree;
       setAndPlayAudio(audioDownloadEnpoint);
       showParseTreeButton(true);
@@ -44,3 +45,9 @@ function stopLoading(){
 //     articleLoader.style.display = "none";
 //   }
 }
+
+function setAndPlayAudio(audioUrl){
+    audio.style.display = "flex";
+    audio.setAttribute('src', audioUrl);
+    audio.play();
+  }

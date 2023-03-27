@@ -2,7 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085a290b-90fc-40fd-8628-06ac4b3584b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/NLPTester.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/NLPTester.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/models/optimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/models/optimizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/_8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/16bbab43-d421-497e-9845-d8aa95d17dc3/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/_8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/bf9978d8-33f5-4724-a4db-4d14446edb90/audio.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/_8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/static/e1a821c8-3eec-40a6-b483-b95f02980cde/audio.mp3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/NLPClient/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClient/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLPClient/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/NLPClient/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

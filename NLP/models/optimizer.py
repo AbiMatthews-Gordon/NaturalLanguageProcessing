@@ -38,8 +38,8 @@ class Optimizer:
     def change_informal_words(tokens):
         informal_words = Dictionary.informal_words
         for index, token in enumerate(tokens):
-            if informal_words.get(token):
-               tokens[index] = informal_words.get(token)
+            if informal_words.get(token.lower()):
+               tokens[index] = informal_words.get(token.lower())
         return tokens
 
     # remove duplicate words unless they are on the allowed duplicates list
@@ -47,7 +47,7 @@ class Optimizer:
     def remove_duplicate_words(tokens):  # eg. "He he went to to the gym." -> He went to the gym.
         # print('\033[94m #1 REMOVING REPEATING WORDS...\033[0m \n ')
         num_of_tokens = len(tokens)
-        allowed_list = ["the"]
+        allowed_list = ["tut"]
         sanitizedWords = [token for index, token in enumerate(tokens)
                           if ((index + 1) < num_of_tokens) and
                           tokens[index + 1] and

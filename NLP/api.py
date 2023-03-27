@@ -136,6 +136,11 @@ def convert_text(text):
 
         parse_tree = Parser.generate_parser_tree(tokens.get("pos_sentences"), foldername)
 
+        print("-------------------------")
+        print("Processed text:/n ")
+        print(tokens.get("process_text"))
+        print("-------------------------")
+
         # generate audio
         generate_audio(tokens.get("process_text"), foldername)
         parse_tree.update({"tokens": tokens.get("pos_sentences"), "id": foldername, "audio_file": ("/static/" + foldername + "/audio.mp3")})
